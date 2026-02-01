@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+.container{
+    @apply max-w-[1166px] mx-auto 
+}
+
+@theme{
+    --font-poppin: "Poppins", sans-serif; 
+}
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --color-primary: #eeedde;
+  --color-accent: "#FF7527";
+  --text-primaryT: "#203239";
+  --text-secondary: "#20323955";
+  --text-accent: "#ff7527";
+}
+
+@layer nav {
+  nav {
+    @apply flex  justify-between items-center py-12;
+  }
+
+  nav .nav_menu {
+    @apply flex gap-x-28;
+  }
+
+  nav .nav_menu_li {
+    @apply font-poppins font-light hover:font-semibold duration-300  leading-tight;
+  }
+
+  nav .nav_menu_li a {
+    @apply relative  after:rounded-[5px] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 translate-y-full after:bg-[#ff7527] after:w-5  after:h-1 after:opacity-0 hover:after:opacity-100 duration-300;
+  }
+}
+
+@layer banner {
+  .banner {
+    @apply flex items-center font-poppins py-30;
+  }
+
+  .banner .left {
+    @apply flex flex-col gap-y-14;
+  }
+
+  .banner .text {
+    @apply flex flex-col gap-6;
+  }
+
+  .banner h1 {
+    @apply font-semibold leading-[150%] text-[56px];
+  }
+
+  .banner p {
+    @apply font-light leading-7 text-base text-secondary w-3/4;
+  }
+
+  .banner .input {
+    @apply flex  capitalize items-center gap-x-3;
+  }
+
+  .banner input {
+    @apply flex items-center text-[rgba(32,50,57,0.5)] bg-white outline-0 rounded-2xl w-3/5;
+  }
+
+  .banner .banner_input {
+    @apply py-6 px-14 placeholder:text-secondary placeholder:font-light;
+  }
+
+  .banner button {
+    @apply font-light text-[rgba(32,50,57,0.5)]  bg-white rounded-2xl py-6 px-10;
+  }
+}
+
+@layer card_section {
+  .card_section .container {
+    @apply flex flex-col gap-y-16 py-25;
+  }
+
+  .card_section .header {
+    @apply w-1/2 font-semibold text-4xl text-[#203239];
+  }
+
+  .card_section .cards {
+    @apply grid grid-cols-3 gap-33;
+  }
+
+  .card_section .cards .card {
+    @apply py-5 px-8 relative hover:shadow-xl duration-300 flex flex-col gap-12 rounded-xl;
+  }
+
+  .card_section .cards .card .top {
+    @apply flex-1;
+  }
+
+  .card_section .cards .card .top h2 {
+    @apply font-medium text-xl;
+  }
+
+  .card_section .cards .card .top p {
+    @apply font-poppin font-light text-[16px] leading-[30px] text-[rgba(32,50,57,0.5)] mt-2
+  }
+
+  .card_section .cards .card .icon {
+    @apply w-2 h-7 rounded-full bg-[#ff7527] absolute left-0 top-0 translate-y-full;
+  }
+  .card_section .cards .card .num {
+    @apply text-[#ff7527] absolute right-0 top-0 translate-y-full -translate-x-full;
+  }
+
+  .card_section .card .link {
+    @apply flex gap-2 font-medium text-[#203239]  items-center;
+  }
+}
